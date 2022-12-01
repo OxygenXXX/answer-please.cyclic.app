@@ -4,6 +4,8 @@ const application = express();
 
 application.all("/", (request, response) =>
 {
+    console.log("Requested /");
+
     response.send("Yo!");
 });
 
