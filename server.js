@@ -3,9 +3,14 @@ const express = require("express");
 const consola = require("consola");
 const fs_extra = require("fs-extra");
 
-const middleware_path = __dirname + "/middleware/";
+const dotenv = require("dotenv").config();
 
 const config = require("./config.json");
+
+const aws_sdk = require("aws-sdk");
+const amazon_s3 = new aws_sdk.S3();
+
+const middleware_path = __dirname + "/middleware/";
 
 const application = express();
 
