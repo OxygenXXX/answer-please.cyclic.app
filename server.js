@@ -11,19 +11,7 @@ const application = express();
 
 application.set("view engine", config.application.view_engine);
 
-fs_extra.readdir(middleware_path, (error, files) =>
-{
-    if (error) throw error;
-   
-    files.forEach(element => 
-    {
-        consola.info(`Loading middleware: ${element}`);
-
-        application.use(require(middleware_path + element).middleware);
-
-        consola.info(`Loaded middleware: ${element}`);
-    });
-});
+require("./utilities/middleware")(middleware_path, application);
 
 application.all("/", (request, response) =>
 {
