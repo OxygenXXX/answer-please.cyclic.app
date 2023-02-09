@@ -1,6 +1,7 @@
 {
     "application":
     {
-        "view_engine": "hbs"
+        "view_engine": "hbs",
+        "database": "local"
     }
 }
